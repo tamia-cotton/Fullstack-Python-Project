@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Car Dealz, {{session["user_name"]}}</h1>
+    <h1> Car for Sale</h1>
+    <table>
+        <thead>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Seller</td>
+            <td>Actions</td>
+        </thead>
+        {%for car in cars%}
+        <tr>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.user.first_name}}</td>
+            
+            {%if car.user.id == id %}
+            <td> 
+                <a href="http://localhost:5000/edit/{{car.id}}">Edit</a>
+                <a href="http://localhost:5000/delete/{{car.id}}">delete</a>
+            </td>
+            {%else%}
+            <td> 
+                <a href="http://localhost:5000/view/{{car.id}}">View</a>
+            </td>
+            {%endif%}
+        </tr>
+        {%endfor%}
+    </table>
+    
+    
+    <form action="/logout" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    <a href="http://localhost:5000/newcar">ADD CAR</a>
+</body>
+</html>

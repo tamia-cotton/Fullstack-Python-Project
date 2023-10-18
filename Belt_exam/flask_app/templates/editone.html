@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://localhost:5000/dashboard">Dashboard</a>
+    <a href="http://localhost:5000/logout">Logout</a>
+
+<h1> Edit {{car.model}}</h1>
+<form action="/edit" method="POST">
+<label for="price">Price:</label>
+<input type="number" name="price" value="{{car.price}}">
+<label for="model">Model:</label>
+<input type="text" name="model"  value="{{car.model}}">
+<label for="make">Make:</label>
+<input type="text" name="make" value="{{car.make}}" >
+<label for="year">Year:</label>
+<input type="number" name="year" value="{{car.year}}">
+<label for="desc">Description</label>
+<input type="text" name="desc" value="{{car.desc}}">
+<input type="submit" value="Update">
+</form>
+</body>
+</html>

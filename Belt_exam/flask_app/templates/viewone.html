@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://localhost:5000/dashboard">Dashboard</a>
+    <a href="http://localhost:5000/logout">Logout</a>
+<br><br><br>
+    <h1>{{car.price}}</h1>
+    <h3>Model: {{car.model}}</h3>
+    <h3>Make: {{car.make}}</h3>
+    <h3>Year: {{car.year}}</h3>
+    <h3>Description: {{car.desc}}</h3>
+    <h4>Seller: {{car.user.first_name}}</h3>
+<form action="/delete/{{session['user_id']}}" method="post">
+    <input type="submit" value="Purchase">
+</form>
+</body>
+</html>
